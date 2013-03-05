@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-COMMON_FOLDER := device/amazon/omap4-common
+COMMON_FOLDER := device/bn/omap4-common
 
 # set to allow building from omap4-common
-BOARD_VENDOR := amazon
+BOARD_VENDOR := bn
 
 PRODUCT_VENDOR_KERNEL_HEADERS := $(COMMON_FOLDER)/kernel-headers
 
@@ -52,7 +52,7 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
-BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_BASE := 0x80080000
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
 

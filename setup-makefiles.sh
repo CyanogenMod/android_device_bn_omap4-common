@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VENDOR=amazon
+VENDOR=bn
 DEVICE=omap4-common
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk

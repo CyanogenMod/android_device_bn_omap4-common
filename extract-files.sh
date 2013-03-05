@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VENDOR=amazon
+VENDOR=bn
 DEVICE=omap4-common
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary

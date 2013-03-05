@@ -17,10 +17,10 @@
 #
 # Everything in this directory will become public
 
-COMMON_FOLDER := device/amazon/omap4-common
+COMMON_FOLDER := device/bn/omap4-common
 
 # set to allow building from omap4-common
-BOARD_VENDOR := amazon
+BOARD_VENDOR := bn
 
 # Setup custom omap4xxx defines
 BOARD_USE_CUSTOM_LIBION := true
@@ -63,7 +63,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \
     persist.sys.root_access=3 \
 
-PRODUCT_CHARACTERISTICS := tablet,nosdcard
+PRODUCT_CHARACTERISTICS := tablet
 
 DEVICE_PACKAGE_OVERLAYS := $(DEVICE_FOLDER)/overlay/aosp
 
@@ -118,5 +118,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Email \
 
-$(call inherit-product-if-exists, vendor/amazon/omap4-common/omap4-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/bn/omap4-common/omap4-common-vendor.mk)
 

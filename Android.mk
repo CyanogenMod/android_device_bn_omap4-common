@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifeq ($(BOARD_VENDOR),amazon)
+ifeq ($(BOARD_VENDOR),bn)
 ifeq ($(TARGET_BOARD_PLATFORM),omap4)
 
 LOCAL_PATH := $(call my-dir)
