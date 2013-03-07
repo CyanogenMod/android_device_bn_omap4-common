@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This file includes all definitions that apply to ALL Amazon Kindle Fire devices, and
-# are also specific to otter devices
-#
 # Everything in this directory will become public
 
 COMMON_FOLDER := device/bn/omap4-common

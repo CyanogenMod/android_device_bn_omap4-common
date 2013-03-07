@@ -21,7 +21,7 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(TARGET_SIMULATOR),true)
 
-ifeq ($(BOARD_CREATE_AMAZON_HDCP_KEYS_SYMLINK), true)
+ifeq ($(BOARD_CREATE_BN_HDCP_KEYS_SYMLINK), true)
 
 #Create HDCP symlink
 HDCP_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/hdcp.keys

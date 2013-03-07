@@ -1,3 +1,3 @@
 Copyright 2013 - The CyanogenMod Project
 
-Common device configuration for Amazon Kindle Fire's (HD and non-HD)
+Common device configuration for Barnes and Noble's Nook devices (Nook Tablet for now)
