@@ -68,7 +68,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.allow.mock.location=1
 # Graphics
 USE_OPENGL_RENDERER := true
 # set if the target supports FBIO_WAITFORVSYNC
-TARGET_HAS_WAITFORVSYNC := true
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+TARGET_USES_OPENGLES_FOR_SCREEN_CAPTURE := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -86,7 +87,7 @@ else
 endif
 
 ifdef OMAP_ENHANCEMENT
-    COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DTARGET_OMAP4
+    COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DTARGET_OMAP4 -DFORCE_SCREENSHOT_CPU_PATH
 endif
 
 ifdef OMAP_ENHANCEMENT_BURST_CAPTURE
@@ -128,5 +129,22 @@ TARGET_KRAIT_BIONIC_PLDTHRESH := 10
 TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
+BOARD_SEPOLICY_DIRS += \
+    device/bn/omap4-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    bluetooth.te \
+    debuggered.te \
+    file_contexts \
+    device.te \
+    dhcp.te \
+    domain.te \
+    file.te \
+    init_shell.te \
+    mediaserver.te \
+    netd.te \
+    pvrsrvinit.te \
+    rild.te \
+    system.te \
+    tee.te \
+    vold.te
