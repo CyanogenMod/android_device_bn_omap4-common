@@ -108,5 +108,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Email \
 
-$(call inherit-product-if-exists, vendor/bn/omap4-common/omap4-common-vendor.mk)
+$(call inherit-product, vendor/bn/omap4-common/omap4-common-vendor.mk)
 
