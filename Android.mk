@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+ifneq ($(filter acclaim,$(TARGET_DEVICE)),)
 ifeq ($(BOARD_VENDOR),bn)
 ifeq ($(TARGET_BOARD_PLATFORM),omap4)
 
@@ -59,4 +60,4 @@ endif
 
 endif
 endif
-
+endif
