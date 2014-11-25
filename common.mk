@@ -100,5 +100,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Email \
 
+PRODUCT_PACKAGES += \
+    pvrsrvinit \
+    libPVRScopeServices.so
+
 $(call inherit-product, vendor/bn/omap4-common/omap4-common-vendor.mk)
 
