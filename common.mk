@@ -94,6 +94,7 @@ PRODUCT_PACKAGES += \
     strace \
     libjni_pinyinime \
     sh \
+    libcorkscrew
 
 # Extra apps (not always included by AOSP)
 PRODUCT_PACKAGES += \
