@@ -1,0 +1,3 @@
+# We load modules in our init.rc scripts
+allow init self:capability { sys_module };
+

@@ -12,21 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Everything in this directory will become public
-
 COMMON_FOLDER := device/bn/omap4-common
 
 # set to allow building from omap4-common
 BOARD_VENDOR := bn
 
-# Setup custom omap4xxx defines
 BOARD_USE_CUSTOM_LIBION := true
-
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := $(DEVICE_FOLDER)/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -38,51 +29,37 @@ PRODUCT_COPY_FILES += \
     $(call add-to-product-copy-files-if-exists,packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=120 \
-    hwui.render_dirty_regions=false \
-    ro.opengles.version=131072 \
     com.ti.omap_enhancement=true \
+    hwui.render_dirty_regions=false \
     omap.enhancement=true \
-    ro.crypto.state=unencrypted \
     persist.sys.usb.config=mtp,adb \
-    persist.sys.root_access=3 \
-    ro.bq.gpu_to_cpu_unsupported=1
+    ro.bq.gpu_to_cpu_unsupported=1 \
+    ro.crypto.state=unencrypted \
+    ro.hwui.disable_scissor_opt=true \
+    ro.opengles.version=131072 \
+    ro.radio.noril=yes \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=120
 
 PRODUCT_CHARACTERISTICS := tablet
 
 DEVICE_PACKAGE_OVERLAYS := $(DEVICE_FOLDER)/overlay/aosp
 
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-# Rootfs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
-    $(COMMON_FOLDER)/default.prop:/root/default.prop \
-
-# Wifi
-PRODUCT_PACKAGES += \
-    dhcpcd.conf \
-    wpa_supplicant_conf \
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-    make_ext4fs \
-    sdcard \
-    setup_fs \
-    e2fsck
+    setup_fs
 
 # Audio Support
 PRODUCT_PACKAGES += \
-    libaudioutils \
     Music \
-    tinyplay \
-    tinymix \
-    tinycap \
-    audio_policy.default \
     audio.a2dp.default \
-    audio.usb.default
+    audio.r_submix.default \
+    audio.usb.default \
+    audio_policy.default \
+    libaudioutils \
+    tinycap \
+    tinymix \
+    tinyplay
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -91,18 +68,13 @@ PRODUCT_PACKAGES += \
 # Misc / Testing
 PRODUCT_PACKAGES += \
     evtest \
-    strace \
+    libcorkscrew \
     libjni_pinyinime \
     sh \
-    libcorkscrew
-
-# Extra apps (not always included by AOSP)
-PRODUCT_PACKAGES += \
-    Email \
+    strace
 
 PRODUCT_PACKAGES += \
     pvrsrvinit \
     libPVRScopeServices.so
 
 $(call inherit-product, vendor/bn/omap4-common/omap4-common-vendor.mk)
-

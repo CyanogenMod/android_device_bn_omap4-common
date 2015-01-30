@@ -61,10 +61,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_VOLD_MAX_PARTITIONS := 32
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
-# adb has root
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
-ADDITIONAL_DEFAULT_PROPERTIES += ro.allow.mock.location=1
-
 # Graphics
 USE_OPENGL_RENDERER := true
 # set if the target supports FBIO_WAITFORVSYNC
@@ -119,31 +115,12 @@ endif
 BOARD_NEEDS_CUTILS_LOG := true
 BOARD_USES_SECURE_SERVICES := true
 
-# CodeAurora Optimizations: msm8960: Improve performance of memmove, bcopy, and memmove_words
-# added by twa_priv
-TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
-TARGET_USE_KRAIT_PLD_SET := true
-TARGET_KRAIT_BIONIC_PLDOFFS := 10
-TARGET_KRAIT_BIONIC_PLDTHRESH := 10
-TARGET_KRAIT_BIONIC_BBTHRESH := 64
-TARGET_KRAIT_BIONIC_PLDSIZE := 64
-
 BOARD_SEPOLICY_DIRS += \
     device/bn/omap4-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    bluetooth.te \
-    debuggered.te \
     file_contexts \
-    device.te \
-    dhcp.te \
-    domain.te \
-    file.te \
-    init_shell.te \
-    mediaserver.te \
-    netd.te \
-    pvrsrvinit.te \
-    rild.te \
-    system.te \
-    tee.te \
-    vold.te
+    fixmac.te \
+    init.te \
+    wpa_supplicant.te \
+    pvrsrvinit.te

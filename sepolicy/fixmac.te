@@ -1,0 +1,5 @@
+# fixmac
+type fixmac, domain;
+type fixmac_exec, exec_type, file_type;
+
+init_daemon_domain(fixmac)
