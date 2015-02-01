@@ -131,5 +131,6 @@ BOARD_SEPOLICY_UNION += \
     shell.te \
     smc_pa.te \
     sysinit.te \
+    untrusted_app.te \
     ueventd.te \
     wpa_supplicant.te
