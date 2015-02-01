@@ -1,0 +1,19 @@
+# clearbootdata
+type clearbootdata, domain;
+type clearbootdata_exec, exec_type, file_type;
+type bootdata_file, file_type;
+
+init_daemon_domain(clearbootdata)
+
+allow clearbootdata devpts:chr_file rw_file_perms;
+allow clearbootdata fuse_device:chr_file getattr;
+allow clearbootdata block_device:blk_file getattr;
+allow clearbootdata block_device:dir search;
+allow clearbootdata self:capability dac_override;
+allow clearbootdata self:capability sys_admin;
+allow clearbootdata vfat:file { read write open getattr };
+allow clearbootdata vfat:dir search;
+allow clearbootdata vfat:filesystem unmount;
+allow clearbootdata rootfs:file { execute execute_no_trans entrypoint };
+allow clearbootdata shell_exec:file { execute read open };
+allow clearbootdata toolbox_exec:file { getattr execute read open execute_no_trans };

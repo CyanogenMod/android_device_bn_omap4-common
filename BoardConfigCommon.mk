@@ -119,8 +119,17 @@ BOARD_SEPOLICY_DIRS += \
     device/bn/omap4-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    clearbootdata.te \
+    dhcp.te \
+    file.te \
     file_contexts \
-    fixmac.te \
     init.te \
-    wpa_supplicant.te \
-    pvrsrvinit.te
+    logbatterydata.te \
+    netd.te \
+    pvrsrvinit.te \
+    setup_fs.te \
+    shell.te \
+    smc_pa.te \
+    sysinit.te \
+    ueventd.te \
+    wpa_supplicant.te

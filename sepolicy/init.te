@@ -1,3 +1,10 @@
-# We load modules in our init.rc scripts
-allow init self:capability { sys_module };
+# fix mac
+type fixmac_exec, exec_type, file_type;
 
+allow init fixmac_exec:file execute_no_trans;
+allow init toolbox_exec:file execute_no_trans;
+allow init vfat:file { read open };
+allow init vfat:dir search;
+
+# We load modules in our init.rc scripts
+allow init self:capability sys_module;
