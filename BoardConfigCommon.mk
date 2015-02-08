@@ -119,11 +119,11 @@ BOARD_SEPOLICY_DIRS += \
     device/bn/omap4-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    clearbootdata.te \
     dhcp.te \
     file.te \
     file_contexts \
     init.te \
+    init_shell.te \
     logbatterydata.te \
     netd.te \
     pvrsrvinit.te \
