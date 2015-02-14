@@ -37,3 +37,10 @@ vendor/lib/libsrv_um_SGX540_120.so
 vendor/lib/libusc_SGX540_120.so
 etc/powervr.ini
 
+# drm 
+lib/libdrmdecrypt.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/libWVStreamControlAPI_L3.so
+vendor/lib/libwvdrm_L3.so
+vendor/lib/libwvm.so
+vendor/lib/mediadrm/libwvdrmengine.so
