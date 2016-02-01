@@ -19,7 +19,7 @@ BOARD_VENDOR := bn
 
 PRODUCT_VENDOR_KERNEL_HEADERS := $(COMMON_FOLDER)/kernel-headers
 
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_FOLDER)/include
+TARGET_SPECIFIC_HEADER_PATH += $(COMMON_FOLDER)/include
 
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
